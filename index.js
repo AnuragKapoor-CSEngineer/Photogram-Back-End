@@ -13,7 +13,7 @@ const multer = require('multer');
     }
 });
 const upload = multer({storage: storage});
-mongoose.connect('process.env.MONGODB_URI', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/photogram', {useNewUrlParser: true});
 server.use('/uploads',express.static('uploads'));
 server.use(cors());
 server.use(bodyParser.urlencoded({ extended: false }))
