@@ -13,7 +13,6 @@ const multer = require('multer');
     }
 });
 const upload = multer({storage: storage});
-// mongoose.connect('mongodb://localhost:27017/photogram', {useNewUrlParser: true});
 mongoose
   .connect(
     "mongodb+srv://codderanurag:anuragkapoor1@cluster0-qydom.mongodb.net",{dbName:'photogram',useNewUrlParser: true}
