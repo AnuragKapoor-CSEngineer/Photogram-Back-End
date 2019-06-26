@@ -16,7 +16,7 @@ const upload = multer({storage: storage});
 // mongoose.connect('mongodb://localhost:27017/photogram', {useNewUrlParser: true});
 mongoose
   .connect(
-    "mongodb+srv://codderanurag:anuragkapoor1-0i5tp.mongodb.net",{dbName:'photogram'}
+    "mongodb+srv://codderanurag:anuragkapoor1-0i5tp.mongodb.net",{dbName:'photogram'},{useNewUrlParser: true}
   )
   .then(() => {
     console.log("Connected to database!");
