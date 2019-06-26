@@ -13,7 +13,20 @@ const multer = require('multer');
     }
 });
 const upload = multer({storage: storage});
-mongoose.connect('mongodb+srv://codderanurag:anuragkapoor1@cluster0-qydom.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
+// mongoose.connect('mongodb+srv://codderanurag:anuragkapoor1@cluster0-qydom.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
+mongoose
+  .connect(
+    "mongodb+srv://codderanurag:anuragkapoor1-0i5tp.mongodb.net",{dbName:'test'}
+  )
+  .then(() => {
+    console.log("Connected to database!");
+  })
+  .catch((error) => {
+    console.log("Connection failed!");
+    console.log(error);
+  });
+
+
 server.use('/uploads',express.static('uploads'));
 server.use(cors());
 server.use(bodyParser.urlencoded({ extended: false }))
