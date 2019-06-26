@@ -18,13 +18,13 @@ mongoose
   .connect(
     "mongodb+srv://codderanurag:anuragkapoor1-0i5tp.mongodb.net",{dbName:'photogram'}
   )
-  .then(() => {
-    console.log("Connected to database!");
-  })
-  .catch((error) => {
-    console.log("Connection failed!");
-    console.log(error);
-  });
+//   .then(() => {
+//     console.log("Connected to database!");
+//   })
+//   .catch((error) => {
+//     console.log("Connection failed!");
+//     console.log(error);
+//   });
 
 server.use('/uploads',express.static('uploads'));
 server.use(cors());
