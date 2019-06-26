@@ -13,10 +13,10 @@ const multer = require('multer');
     }
 });
 const upload = multer({storage: storage});
-// mongoose.connect('mongodb+srv://codderanurag:anuragkapoor1@cluster0-qydom.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
+// mongoose.connect('mongodb://localhost:27017/photogram', {useNewUrlParser: true});
 mongoose
   .connect(
-    "mongodb+srv://codderanurag:anuragkapoor1-0i5tp.mongodb.net",{dbName:'test'}
+    "mongodb+srv://codderanurag:anuragkapoor1-0i5tp.mongodb.net",{dbName:'photogram'}
   )
   .then(() => {
     console.log("Connected to database!");
@@ -25,7 +25,6 @@ mongoose
     console.log("Connection failed!");
     console.log(error);
   });
-
 
 server.use('/uploads',express.static('uploads'));
 server.use(cors());
@@ -65,6 +64,6 @@ server.post('/addImage',upload.single('file'),function(req,res){
          res.json(docs);
      })
  })
-  server.listen(process.env.PORT ||8080,function(){
+  server.listen(process.env.PORT||8080,function(){
       console.log("Server Started");
   })
